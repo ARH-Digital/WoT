@@ -1,0 +1,46 @@
+
+/* 
+    Created on : 25/07/2014, 1:18:42 PM
+    Author     : Aaron
+*/
+
+.tankList{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+    list-style: none;
+}
+
+.tankList.ng-enter,
+.tankList.ng-leave,
+.tankList.ng-move {
+  -webkit-transition: 0.5s linear all;
+  -moz-transition: 0.5s linear all;
+  -o-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+
+.tankList.ng-enter,
+.tankList.ng-move {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.tankList.ng-move.ng-move-active,
+.tankList.ng-enter.ng-enter-active {
+  opacity: 1;
+  height: 120px;
+}
+
+.tankList.ng-leave {
+  opacity: 1;
+  overflow: hidden;
+}
+
+.tankList.ng-leave.ng-leave-active {
+  opacity: 0;
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}

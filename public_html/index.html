@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+    License information to go here.
+-->
+<html ng-app="tankApp">
+    <head>
+        <title>Aaron's WoT Tanks</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/animations.css" rel="stylesheet" type="text/css"/>
+        
+        
+        <script src="js/libs/jquery/jquery.js" type="text/javascript"></script>
+        <script src="js/libs/angular.js/angular.min.js" type="text/javascript"></script>
+        <script src="js/libs/angular.js/angular-resource.min.js" type="text/javascript"></script>
+        <script src="js/libs/angular.js/angular-animate.min.js" type="text/javascript"></script>
+        <script src="js/app.js" type="text/javascript"></script>
+    </head>
+    <body ng-controller="TankCtrl">
+        <div class="col-md-2">
+            Search by tank name: <br><input type="text" ng-model="search.name_i18n"><br>
+            Filter by Nation: <br><select ng-model="nation.nation_i18n">
+                <option value="">All</option>
+                <option value="China">China</option>
+                <option value="France">France</option>
+                <option value="Germany">Germany</option>
+                <option value="Japan">Japan</option>
+                <option value="U.K.">U.K.</option>
+                <option value="U.S.A.">U.S.A.</option>
+                <option value="U.S.S.R.">U.S.S.R.</option>
+            </select>
+            
+            
+        </div>
+        <div class="col-md-10">
+           <ul>
+                <li ng-repeat="tank in tanks | objFilter:search | objFilter:nation" class="tankList" >
+                    <h3>{{tank.name_i18n}}</h3>
+                    <p>Nation: {{tank.nation_i18n}}</p>
+                    <p>Tier: {{tank.level}}</p>
+                    <p>Type: {{tank.type_i18n}}</p>
+                    <p>Image: {{tank.images}}</p>
+                </li>
+            </ul>
+            
+        </div>
+        
+        
+        
+        
+    </body>
+</html>
