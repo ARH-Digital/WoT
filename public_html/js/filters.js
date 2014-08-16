@@ -2,7 +2,8 @@
 
 //  objFilter solution found on stackoverflow - 
 //      Filters can only filter arrays and not objects within an object.
-app.filter('objFilter', function() {
+
+angular.module('objFilterModule',[]).filter('objFilter', function() {
   return function(items, filter) {
       if (!filter){
           return items;
