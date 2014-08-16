@@ -44,7 +44,7 @@
         </div>
         <div class="col-md-10">
            <ul>
-                <li ng-repeat="tank in tanks | objFilter:search | objFilter:nation" class="tankList" >
+                <li ng-repeat="tank in tanks | objFilter:search | objFilter:nation | orderBy:orderProp" class="tankList" >
                     <h3><a href="?{{tank.tank_id}}">{{tank.name_i18n}}</a></h3>
                     <span style="float:left"><a href="?{{tank.tank_id}}"><img ng-src="{{tank.image}}"/></a></span>
                     <p>Short Name: {{tank.short_name_i18n}}</p>

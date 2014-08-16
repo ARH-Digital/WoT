@@ -9,7 +9,7 @@ tankControllers.controller('TankCtrl', [ '$scope', '$http', function($scope, $ht
         url: 'tanksJSON.info'
         })
         .success(function(data){
-            $scope.tanks = data.data;                
+            $scope.tanks = data.data; 
         })
         .error(function(){
             alert('Unable to retrieve data at this time. Please try again later.');
