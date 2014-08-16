@@ -43,7 +43,7 @@
            <ul>
                 <li ng-repeat="tank in tanks | objFilter:search | objFilter:nation" class="tankList" >
                     <h3>{{tank.name_i18n}}</h3>
-                    <p>Nation: {{tank.nation_i18n}}</p>
+                    <p>Short Name: {{tank.short_name_i18n}}</p>
                     <p>Tier: {{tank.level}}</p>
                     <p>Type: {{tank.type_i18n}}</p>
                     <p>Image: <img ng-src="{{tank.image}}"/></p>
