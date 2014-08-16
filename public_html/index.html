@@ -16,6 +16,12 @@
         <script src="js/libs/angular.js/angular-resource.min.js" type="text/javascript"></script>
         <script src="js/libs/angular.js/angular-animate.min.js" type="text/javascript"></script>
         <script src="js/app.js" type="text/javascript"></script>
+        
+        <style type="text/css">
+            body{
+                background-image: url('images/grey_sandbag.png');
+            }
+        </style>
     </head>
     <body ng-controller="TankCtrl">
         <div class="col-md-2">
@@ -40,7 +46,8 @@
                     <p>Nation: {{tank.nation_i18n}}</p>
                     <p>Tier: {{tank.level}}</p>
                     <p>Type: {{tank.type_i18n}}</p>
-                    <p>Image: {{tank.images}}</p>
+                    <p>Image: <img ng-src="{{tank.image}}"/></p>
+                    
                 </li>
             </ul>
             
