@@ -1,0 +1,64 @@
+
+<style>
+    table,th,td{
+        border:1px solid black;
+        padding: 0.5em;
+    }
+</style>
+
+
+<div class="col-md-1"></div>
+
+<div class="col-md-3">
+    <h2>Vehicle statistics</h2>
+    
+    <h3>Movement</h3>
+    <p>Engine Power: {{tank.engine_power}}hp</p>
+    <p>Weight: {{tank.weight}}t</p>
+    <p>Power/Weight Ratio: {{tank.engine_power / tank.weight | number:2}}hp/t</p>
+    <p>Speed Limit: {{tank.speed_limit}}</p>
+    <p>Turning Speed: {{tank.chassis_rotation_speed}} (deg/s)</p>
+    <p>View Range: {{tank.circular_vision_radius}}m</p>
+    <p>Radio Range: {{tank.radio_distance}}m</p>
+    
+    <h3>Armor</h3>
+    <p>Hull Front: {{tank.vehicle_armor_forehead}}mm</p>
+    <p>Hull Side: {{tank.vehicle_armor_board}}mm</p>
+    <p>Hull Rear: {{tank.vehicle_armor_fedd}}mm</p>
+    <p>Turret Front: {{tank.turret_armor_forehead}}mm</p>
+    <p>Turret Side: {{tank.turret_armor_board}}mm</p>
+    <p>Turret Rear: {{tank.turret_armor_fedd}}mm</p>
+    
+    <p><strong>Hull: {{tank.vehicle_armor_forehead}}/{{tank.vehicle_armor_board}}/{{tank.vehicle_armor_fedd}}mm</strong></p>
+    
+    <table>
+        <tr><th></th><th>Hull</th><th>Turret</th></tr>
+        <tr><td>Front</td><td>{{tank.vehicle_armor_forehead}}mm</td><td>{{tank.turret_armor_forehead}}mm</td></tr>
+        <tr><td>Side</td><td>{{tank.vehicle_armor_board}}mm</td><td>{{tank.turret_armor_board}}mm</td></tr>
+        <tr><td>Rear</td><td>{{tank.vehicle_armor_fedd}}mm</td><td>{{tank.turret_armor_fedd}}mm</td></tr>
+    </table>
+</div>
+
+<div class="col-md-7">
+    <h1>{{tank.name_i18n}}</h1>
+    <p>Contour Image: <img ng-src="{{tank.contour_image}}"/></p>
+    <p><img ng-src="{{tank.image}}"/></p>
+    
+    <h2>Components</h2>
+    
+    <h3>Turrets</h3>
+    <ul ng-repeat="turret in turrets">
+        <li>{{turret[tank.turrets[$index].module_id].name_i18n}}</li>
+    </ul>
+</div>
+
+<div class="col-md-1"></div>
+
+<!--
+Notes for turrets
+
+armor_fedd = rear;
+armor_board = sides;
+armor_forehead = front;
+
+-->
