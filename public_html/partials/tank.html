@@ -61,6 +61,71 @@
             </table>
         </li>
     </ul>
+    
+    <h3>Guns</h3>
+    <ul ng-repeat="gun in guns">
+        <li>
+            <table class="specs">
+                <tr><th>Tier</th><th>Gun</th><th>Rate of Fire (Rounds/min)</th><th>Shell Penetration (mm) avg.</th><th>Shell Damage avg.</th><th>Cost (Credits)</th></tr>
+                <tr>
+                    <td width="5%">{{gun[tank.guns[$index].module_id].level}}</td>
+                    <td width="20%">{{gun[tank.guns[$index].module_id].name_i18n}}</td>
+                    <td width="15%">{{gun[tank.guns[$index].module_id].rate}}</td>
+                    <td width="20%">{{gun[tank.guns[$index].module_id].piercing_power[0]}} / {{gun[tank.guns[$index].module_id].piercing_power[1]}} / {{gun[tank.guns[$index].module_id].piercing_power[2]}}</td>
+                    <td width="25%">{{gun[tank.guns[$index].module_id].damage[0]}} / {{gun[tank.guns[$index].module_id].damage[1]}} / {{gun[tank.guns[$index].module_id].damage[2]}}</td>
+                    <td width="15%">{{gun[tank.guns[$index].module_id].price_credit | number}}</td>
+                </tr>
+            </table>
+        </li>
+    </ul>
+       
+    <h3>Engines</h3>
+    <ul ng-repeat="engine in engines">
+        <li>
+            <table class="specs">
+                <tr><th>Tier</th><th>Engine</th><th>Power (hp)</th><th>Chance of Fire</th><th>Cost (Credits)</th></tr>
+                <tr>
+                    <td width="5%">{{engine[tank.engines[$index].module_id].level}}</td>
+                    <td width="35%">{{engine[tank.engines[$index].module_id].name_i18n}}</td>
+                    <td width="20%">{{engine[tank.engines[$index].module_id].power}}</td>
+                    <td width="25%">{{engine[tank.engines[$index].module_id].fire_starting_chance}}%</td>
+                    <td width="15%">{{engine[tank.engines[$index].module_id].price_credit | number}}</td>
+                </tr>
+            </table>
+        </li>
+    </ul>
+    
+    <h3>Suspension</h3>
+    <ul ng-repeat="chassi in chassis">
+        <li>
+            <table class="specs">
+                <tr><th>Tier</th><th>Suspension</th><th>Load Limit (t)</th><th>Rotation Speed (deg/s)</th><th>Cost (Credits)</th></tr>
+                <tr>
+                    <td width="5%">{{chassi[tank.chassis[$index].module_id].level}}</td>
+                    <td width="35%">{{chassi[tank.chassis[$index].module_id].name_i18n}}</td>
+                    <td width="20%">{{chassi[tank.chassis[$index].module_id].max_load}}</td>
+                    <td width="25%">{{chassi[tank.chassis[$index].module_id].rotation_speed}}</td>
+                    <td width="15%">{{chassi[tank.chassis[$index].module_id].price_credit | number}}</td>
+                </tr>
+            </table>
+        </li>
+    </ul>
+    
+    <h3>Radios</h3>
+    <ul ng-repeat="radio in radios">
+        <li>
+            <table class="specs">
+                <tr><th>Tier</th><th>Radio</th><th>Signal Range (m)</th><th>Cost (Credits)</th></tr>
+                <tr>
+                    <td width="5%">{{radio[tank.radios[$index].module_id].level}}</td>
+                    <td width="35%">{{radio[tank.radios[$index].module_id].name_i18n}}</td>
+                    <td width="45%">{{radio[tank.radios[$index].module_id].distance}}</td>
+                    <td width="15%">{{radio[tank.radios[$index].module_id].price_credit | number}}</td>
+                </tr>
+            </table>
+        </li>
+    </ul>
+    
 </div>
 
 <div class="col-md-1"></div>
