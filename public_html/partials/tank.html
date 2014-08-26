@@ -41,10 +41,14 @@
 
 <div class="col-md-8">
     <h1>{{tank.name_i18n}} <img ng-src="{{tank.contour_image}}"/></h1>
-    <p><img ng-src="{{tank.image}}"/></p>
+    <p><img ng-src="{{tank.image}}" style="float:left;"/>
+        {{tank.nation_i18n}} <img ng-src="{{tank.nation_i18n | flag}}"/><br> <br> 
+        Tier<img ng-src="{{tank.level | tier}}"/><br> <br> 
+        {{tank.type_i18n}} <img ng-src="{{tank.type | type}}"/></p>
+    <div style="clear:both;"></div>
     
     <h2>Components</h2>
-    <h3>Turrets <img src="images/Module_wot_turret.png" alt=""/></h3>
+    <h3>Turrets <img src="images/module/Module_wot_turret.png" alt=""/></h3>
     <ul ng-repeat="turret in turrets">
         
         <li>
@@ -62,7 +66,7 @@
         </li>
     </ul>
     
-    <h3>Guns <img src="images/Module_wot_gun.png" alt=""/></h3>
+    <h3>Guns <img src="images/module/Module_wot_gun.png" alt=""/></h3>
     <ul ng-repeat="gun in guns">
         <li>
             <table class="specs">
@@ -79,7 +83,7 @@
         </li>
     </ul>
        
-    <h3>Engines <img src="images/Module_wot_engine.png" alt=""/></h3>
+    <h3>Engines <img src="images/module/Module_wot_engine.png" alt=""/></h3>
     <ul ng-repeat="engine in engines">
         <li>
             <table class="specs">
@@ -95,7 +99,7 @@
         </li>
     </ul>
     
-    <h3>Suspension <img src="images/Module_wot_chassis.png" alt=""/></h3>
+    <h3>Suspension <img src="images/module/Module_wot_chassis.png" alt=""/></h3>
     <ul ng-repeat="chassi in chassis">
         <li>
             <table class="specs">
@@ -111,7 +115,7 @@
         </li>
     </ul>
     
-    <h3>Radios <img src="images/Module_wot_radio.png" alt=""/></h3>
+    <h3>Radios <img src="images/module/Module_wot_radio.png" alt=""/></h3>
     <ul ng-repeat="radio in radios">
         <li>
             <table class="specs">

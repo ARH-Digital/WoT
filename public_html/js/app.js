@@ -4,7 +4,7 @@
 var app = angular.module('tankApp', [
     'ngRoute',
     'ngAnimate',
-    'objFilterModule',
+    'tankFilters',
     'tankControllers'
     ] );
 
