@@ -9,10 +9,18 @@
     th,td{
         padding:0.5em;
         text-align: center;
-        border: 1px solid black;
+        border: 1px solid #BFA300;
     }
     ul{
        list-style-type: none; 
+    }
+    tr td{
+        background: #737373;
+        color: #EDEDED;
+    }
+    tr th{
+        background: #000000;
+        color: #FFFFFF;
     }
 </style>
 
@@ -20,8 +28,9 @@
 <div class="col-md-1"></div>
 
 <div class="col-md-2" style="background-color: #F2F2F2;">
-    <h2>Vehicle statistics</h2>
     
+    <h2>Vehicle statistics</h2>
+
     <h3>Movement</h3>
     <p>Engine Power: {{tank.engine_power}}hp</p>
     <p>Weight: {{tank.weight}}t</p>
@@ -40,11 +49,13 @@
 </div>
 
 <div class="col-md-8">
+    
     <h1>{{tank.name_i18n}} <img ng-src="{{tank.contour_image}}"/></h1>
     <p><img ng-src="{{tank.image}}" style="float:left;"/>
         {{tank.nation_i18n}} <img ng-src="{{tank.nation_i18n | flag}}"/><br> <br> 
         Tier<img ng-src="{{tank.level | tier}}"/><br> <br> 
         {{tank.type_i18n}} <img ng-src="{{tank.type | type}}"/></p>
+    
     <div style="clear:both;"></div>
     
     <h2>Components</h2>
@@ -55,7 +66,7 @@
             <table class="specs">
                 <tr><th>Tier</th><th>Turret</th><th>Armor (mm)</th><th>View Range (m)</th><th>Rotation Speed (deg/s)</th><th>Cost (Credits)</th></tr>
                 <tr>
-                    <td width="5%">{{turret[tank.turrets[$index].module_id].level}}</td>
+                    <td width="5%"><img ng-src="{{turret[tank.turrets[$index].module_id].level | tier}}"/></td>
                     <td width="20%">{{turret[tank.turrets[$index].module_id].name_i18n}}</td>
                     <td width="15%">{{turret[tank.turrets[$index].module_id].armor_forehead}} / {{turret[tank.turrets[$index].module_id].armor_board}} / {{turret[tank.turrets[$index].module_id].armor_fedd}}</td>
                     <td width="20%">{{turret[tank.turrets[$index].module_id].circular_vision_radius}}</td>
@@ -72,7 +83,7 @@
             <table class="specs">
                 <tr><th>Tier</th><th>Gun</th><th>Rate of Fire (Rounds/min)</th><th>Shell Penetration (mm) avg.</th><th>Shell Damage avg.</th><th>Cost (Credits)</th></tr>
                 <tr>
-                    <td width="5%">{{gun[tank.guns[$index].module_id].level}}</td>
+                    <td width="5%"><img ng-src="{{gun[tank.guns[$index].module_id].level | tier}}"/></td>
                     <td width="20%">{{gun[tank.guns[$index].module_id].name_i18n}}</td>
                     <td width="15%">{{gun[tank.guns[$index].module_id].rate}}</td>
                     <td width="20%">{{gun[tank.guns[$index].module_id].piercing_power[0]}} / {{gun[tank.guns[$index].module_id].piercing_power[1]}} / {{gun[tank.guns[$index].module_id].piercing_power[2]}}</td>
@@ -89,7 +100,7 @@
             <table class="specs">
                 <tr><th>Tier</th><th>Engine</th><th>Power (hp)</th><th>Chance of Fire</th><th>Cost (Credits)</th></tr>
                 <tr>
-                    <td width="5%">{{engine[tank.engines[$index].module_id].level}}</td>
+                    <td width="5%"><img ng-src="{{engine[tank.engines[$index].module_id].level | tier}}"/></td>
                     <td width="35%">{{engine[tank.engines[$index].module_id].name_i18n}}</td>
                     <td width="20%">{{engine[tank.engines[$index].module_id].power}}</td>
                     <td width="25%">{{engine[tank.engines[$index].module_id].fire_starting_chance}}%</td>
@@ -105,7 +116,7 @@
             <table class="specs">
                 <tr><th>Tier</th><th>Suspension</th><th>Load Limit (t)</th><th>Rotation Speed (deg/s)</th><th>Cost (Credits)</th></tr>
                 <tr>
-                    <td width="5%">{{chassi[tank.chassis[$index].module_id].level}}</td>
+                    <td width="5%"><img ng-src="{{chassi[tank.chassis[$index].module_id].level | tier}}"/></td>
                     <td width="35%">{{chassi[tank.chassis[$index].module_id].name_i18n}}</td>
                     <td width="20%">{{chassi[tank.chassis[$index].module_id].max_load}}</td>
                     <td width="25%">{{chassi[tank.chassis[$index].module_id].rotation_speed}}</td>
@@ -121,7 +132,7 @@
             <table class="specs">
                 <tr><th>Tier</th><th>Radio</th><th>Signal Range (m)</th><th>Cost (Credits)</th></tr>
                 <tr>
-                    <td width="5%">{{radio[tank.radios[$index].module_id].level}}</td>
+                    <td width="5%"><img ng-src="{{radio[tank.radios[$index].module_id].level | tier}}"/></td>
                     <td width="35%">{{radio[tank.radios[$index].module_id].name_i18n}}</td>
                     <td width="45%">{{radio[tank.radios[$index].module_id].distance}}</td>
                     <td width="15%">{{radio[tank.radios[$index].module_id].price_credit | number}}</td>
