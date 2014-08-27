@@ -1,7 +1,35 @@
 
     <div class="col-md-2">
-        Search by tank name: <br><input type="text" ng-model="search.name_i18n">
+        Filter by tank name: <br><input type="text" ng-model="search.name_i18n"><br>
+        <br>
         
+        <h4>Type:</h4>
+        
+        <select ng-model="type.type_i18n">
+            <option value="">All</option>
+            <option value="Light Tank">Light Tank</option>
+            <option value="Medium Tank">Medium Tank</option>
+            <option value="Heavy Tank">Heavy Tank</option>
+            <option value="Tank Destroyer">Tank Destroyer</option>
+            <option value="SPG">Self Propelled Gun</option>
+        </select>
+        <br>
+        
+        <h4>Tier:</h4>
+        
+        <select ng-model="tier.tier">
+            <option value="">All</option>
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+            <option value="four">4</option>
+            <option value="five">5</option>
+            <option value="six">6</option>
+            <option value="seven">7</option>
+            <option value="eight">8</option>
+            <option value="nine">9</option>
+            <option value="ten">10</option>
+        </select>
 
     </div>
     <div class="col-md-10">
@@ -25,7 +53,7 @@
         </script>
         
        <ul class="tanks">
-            <li ng-repeat="tank in tanks | objFilter:search | objFilter:nation" class="tankList" >
+            <li ng-repeat="tank in tanks | objFilter:search | objFilter:nation | objFilter:type | objFilter:tier" class="tankList" >
                 <h3><a href="#/tanks/{{tank.tank_id}}">{{tank.name_i18n}}</a></h3>
                 <span style="float:left"><a href="#/tanks/{{tank.tank_id}}"><img ng-src="{{tank.image}}"/></a></span>
                 <p>Short Name: {{tank.short_name_i18n}}</p>
