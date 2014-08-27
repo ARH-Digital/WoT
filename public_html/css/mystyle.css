@@ -12,13 +12,54 @@
 .thumbnails li{
     width: 12.5%;
 }
-
 .tanks{
     padding:0;
 }
-
 .tanks li{
     width: 48%;
     float: left;
     margin: 1%;
+}
+
+.premium{
+    text-shadow: 0 0 0.2em #FFA600;
+}
+
+.specs{
+    border:1px solid black;
+    padding: 0.5em;
+    background-color: #EDEDED;
+    width:100%;
+}
+.specs th,.specs td{
+    padding:0.5em;
+    text-align: center;
+    border: 1px solid #BFA300;
+}
+ul{
+   list-style-type: none; 
+}
+.specs tr td{
+    background: #737373;
+    color: #FFFFFF;
+    text-shadow: 0.1em 0.1em 0.2em black;
+}
+.specs tr th{
+    background: #000000;
+    color: #FFFFFF;
+}
+
+.stats{
+    width: 100%;
+}
+.stats td,.stats th{
+    padding: 2% 5%;
+    border: 1px solid black;
+}
+
+.center{
+    text-align: center;
+}
+.right{
+    text-align: right;
 }

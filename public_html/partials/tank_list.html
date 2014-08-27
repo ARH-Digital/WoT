@@ -1,6 +1,7 @@
 
     <div class="col-md-2">
-        Filter by tank name: <br><input type="text" ng-model="search.name_i18n"><br>
+        <h4>Filter by tank name:</h4>
+        <input type="text" ng-model="search.name_i18n"><br>
         <br>
         
         <h4>Type:</h4>
@@ -34,9 +35,9 @@
     </div>
     <div class="col-md-10">
         
-        <strong style="text-align: center;">
-        <h4 style="text-align: center;">Filter by Nation:</h4>
         
+        <h4>Filter by Nation:</h4>
+
         <select ng-model="nation.nation_i18n" class="image-picker show-html">
             <option data-img-src="images/flags/all.png" value="">All</option>
             <option data-img-src="images/flags/china.png" value="China">China</option>
@@ -47,20 +48,18 @@
             <option data-img-src="images/flags/usa.png" value="U.S.A.">U.S.A.</option>
             <option data-img-src="images/flags/ussr.png" value="U.S.S.R.">U.S.S.R.</option>
         </select>
-        </strong>
+
         <script>
             $("select").imagepicker({hide_select:false});
         </script>
         
        <ul class="tanks">
             <li ng-repeat="tank in tanks | objFilter:search | objFilter:nation | objFilter:type | objFilter:tier" class="tankList" >
-                <h3><a href="#/tanks/{{tank.tank_id}}">{{tank.name_i18n}}</a></h3>
+                <h3><a href="#/tanks/{{tank.tank_id}}">{{tank.name_i18n}}</a><span ng-show="{{tank.is_premium}}" class="premium"> - Premium</span></a></h3>
                 <span style="float:left"><a href="#/tanks/{{tank.tank_id}}"><img ng-src="{{tank.image}}"/></a></span>
                 <p>Short Name: {{tank.short_name_i18n}}</p>
                 <p>Tier: {{tank.level}}</p>
                 <p>Type: {{tank.type_i18n}}</p>
-
-
             </li>
         </ul>
 

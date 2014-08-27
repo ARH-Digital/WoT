@@ -1,50 +1,30 @@
+<div class="col-md-1">
+    <a href="index.html"><img src="images/wotlogo.png" alt="logo" style="width:100%;margin-top:10%;"/></a>
+</div>
 
-<style>
-    table.specs{
-        border:1px solid black;
-        padding: 0.5em;
-        background-color: #EDEDED;
-        width:100%;
-    }
-    th,td{
-        padding:0.5em;
-        text-align: center;
-        border: 1px solid #BFA300;
-    }
-    ul{
-       list-style-type: none; 
-    }
-    tr td{
-        background: #737373;
-        color: #EDEDED;
-    }
-    tr th{
-        background: #000000;
-        color: #FFFFFF;
-    }
-</style>
-
-
-<div class="col-md-1"></div>
-
-<div class="col-md-2" style="background-color: #F2F2F2;">
+<div class="col-md-3" style="background-color: #F2F2F2;">
     
-    <h2>Vehicle statistics</h2>
+    <img ng-src="images/flags/{{tank.nation}}.png" style="width:100%;margin-top:5%;"/>
+    <h2 class="center">Vehicle statistics</h2>
 
-    <h3>Movement</h3>
-    <p>Engine Power: {{tank.engine_power}}hp</p>
-    <p>Weight: {{tank.weight}}t</p>
-    <p>Power/Weight Ratio: {{tank.engine_power / tank.weight | number:2}}hp/t</p>
-    <p>Speed Limit: {{tank.speed_limit}}</p>
-    <p>Turning Speed: {{tank.chassis_rotation_speed}} (deg/s)</p>
-    <p>View Range: {{tank.circular_vision_radius}}m</p>
-    <p>Radio Range: {{tank.radio_distance}}m</p>
+    <h3 class="center">Movement</h3>
+    <table class="stats">
+        <tr><td>Engine Power</td><td class="right">{{tank.engine_power}}hp</td></tr>
+        <tr><td>Weight</td><td class="right">{{tank.engine_power}}hp</td></tr>
+        <tr><td>Power/Weight Ratio</td><td class="right">{{tank.engine_power / tank.weight | number:2}}hp/t</td></tr>
+        <tr><td>Speed Limit</td><td class="right">{{tank.speed_limit}}</td></tr>
+        <tr><td>Turning Speed</td><td class="right">{{tank.chassis_rotation_speed}} (deg/s)</td></tr>
+        <tr><td>View Range</td><td class="right">{{tank.circular_vision_radius}}m</td></tr>
+        <tr><td>Radio Range</td><td class="right">{{tank.radio_distance}}m</td></tr>
+    </table>
     
-    <h3>Armor</h3>
-    <p>Front / Side / Rear</p>
+    <h3 class="center">Armor (mm)</h3>
     
-    <p>Hull: {{tank.vehicle_armor_forehead}} / {{tank.vehicle_armor_board}} / {{tank.vehicle_armor_fedd}}mm</p>
-    <p>Turret: {{tank.turret_armor_forehead}} / {{tank.turret_armor_board}} / {{tank.turret_armor_fedd}}mm</p>
+    <table class="stats">
+        <tr><td></td><th class="center">Front</th><th class="center">Side</th><th class="center">Rear</th></tr>
+        <tr><th>Hull</th><td class="center">{{tank.vehicle_armor_forehead}}</td><td class="center">{{tank.vehicle_armor_board}}</td><td class="center">{{tank.vehicle_armor_fedd}}</td></tr>
+        <tr><th>Turret</th><td class="center">{{tank.turret_armor_forehead}}</td><td class="center">{{tank.turret_armor_board}}</td><td class="center">{{tank.turret_armor_fedd}}</td></tr>
+    </table>
 
 </div>
 
@@ -60,6 +40,9 @@
     
     <h2>Components</h2>
     <h3>Turrets <img src="images/module/Module_wot_turret.png" alt=""/></h3>
+    <div ng-if="turrets.length==null">
+        <h4> &nbsp;&nbsp;&nbsp;This tank does not have a turret</h4>
+    </div>
     <ul ng-repeat="turret in turrets">
         
         <li>
@@ -76,6 +59,7 @@
             </table>
         </li>
     </ul>
+    
     
     <h3>Guns <img src="images/module/Module_wot_gun.png" alt=""/></h3>
     <ul ng-repeat="gun in guns">
@@ -143,4 +127,3 @@
     
 </div>
 
-<div class="col-md-1"></div>
