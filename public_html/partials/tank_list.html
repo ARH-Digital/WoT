@@ -1,21 +1,30 @@
 
     <div class="col-md-2">
-        Search by tank name: <br><input type="text" ng-model="search.name_i18n"><br>
-        Filter by Nation: <br><select ng-model="nation.nation_i18n">
-            <option value="">All</option>
-            <option value="China">China</option>
-            <option value="France">France</option>
-            <option value="Germany">Germany</option>
-            <option value="Japan">Japan</option>
-            <option value="U.K.">U.K.</option>
-            <option value="U.S.A.">U.S.A.</option>
-            <option value="U.S.S.R.">U.S.S.R.</option>
-        </select>
-
+        Search by tank name: <br><input type="text" ng-model="search.name_i18n">
+        
 
     </div>
     <div class="col-md-10">
-       <ul>
+        
+        <strong style="text-align: center;">
+        <h4 style="text-align: center;">Filter by Nation:</h4>
+        
+        <select ng-model="nation.nation_i18n" class="image-picker show-html">
+            <option data-img-src="images/flags/all.png" value="">All</option>
+            <option data-img-src="images/flags/china.png" value="China">China</option>
+            <option data-img-src="images/flags/france.png" value="France">France</option>
+            <option data-img-src="images/flags/germany.png" value="Germany">Germany</option>
+            <option data-img-src="images/flags/japan.png" value="Japan">Japan</option>
+            <option data-img-src="images/flags/uk.png" value="U.K.">U.K.</option>
+            <option data-img-src="images/flags/usa.png" value="U.S.A.">U.S.A.</option>
+            <option data-img-src="images/flags/ussr.png" value="U.S.S.R.">U.S.S.R.</option>
+        </select>
+        </strong>
+        <script>
+            $("select").imagepicker({hide_select:false});
+        </script>
+        
+       <ul class="tanks">
             <li ng-repeat="tank in tanks | objFilter:search | objFilter:nation" class="tankList" >
                 <h3><a href="#/tanks/{{tank.tank_id}}">{{tank.name_i18n}}</a></h3>
                 <span style="float:left"><a href="#/tanks/{{tank.tank_id}}"><img ng-src="{{tank.image}}"/></a></span>

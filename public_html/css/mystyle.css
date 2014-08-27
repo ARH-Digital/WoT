@@ -1,0 +1,24 @@
+/* 
+    Created on : 27/08/2014, 12:43:47 PM
+    Author     : Aaron
+*/
+
+.image_picker_image{
+    float: left;
+}
+.thumbnail{
+    float:left;
+}
+.thumbnails li{
+    width: 12.5%;
+}
+
+.tanks{
+    padding:0;
+}
+
+.tanks li{
+    width: 48%;
+    float: left;
+    margin: 1%;
+}
