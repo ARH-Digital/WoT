@@ -3798,7 +3798,7 @@
         "16161": {
             "nation_i18n": "U.S.A.",
             "level": 9,
-            "tier": "ten",
+            "tier": "nine",
             "is_premium": false,
             "type_i18n": "SPG",
             "short_name_i18n": "M53/M55",
@@ -3893,6 +3893,83 @@
             "name_i18n": "Type 58",
             "image": "http://worldoftanks.asia/static/2.13.1/encyclopedia/tankopedia/vehicle/china-ch20_type58.png",
             "tank_id": "5169"
+        },
+		"18449": {
+            "nation_i18n": "Germany",
+            "level": 8,
+			"tier": "eight",
+            "is_premium": false,
+            "type_i18n": "Light Tank",
+            "short_name_i18n": "G103 RU 251 short",
+            "name_i18n": "G103 RU 251",
+			"image": "http://worldoftanks.asia/static/2.14.0/encyclopedia/tankopedia/vehicle/germany-g103_ru_251.png",
+            "tank_id": 18449
+        },
+		"16673": {
+            "nation_i18n": "U.S.A.",
+            "level": 6,
+			"tier": "six",
+            "is_premium": false,
+            "type_i18n": "Light Tank",
+            "short_name_i18n": "T37 short",
+            "name_i18n": "T37",
+			"image": "http://worldoftanks.asia/static/2.14.0/encyclopedia/tankopedia/vehicle/usa-t37.png",
+            "tank_id": 16673
+        },
+		"18209": {
+            "nation_i18n": "U.S.A.",
+            "level": 8,
+			"tier": "eight",
+            "is_premium": false,
+            "type_i18n": "Light Tank",
+            "short_name_i18n": "T49",
+            "name_i18n": "T49",
+			"image": "http://worldoftanks.asia/static/2.14.0/encyclopedia/tankopedia/vehicle/usa-t49.png",
+            "tank_id": 18209
+        },
+		"18177": {
+            "nation_i18n": "U.S.S.R.",
+            "level": 8,
+			"tier": "eight",
+            "is_premium": false,
+            "type_i18n": "Light Tank",
+            "short_name_i18n": "R109 T54S short",
+            "name_i18n": "R109 T54S",
+			"image": "http://worldoftanks.asia/static/2.14.0/encyclopedia/tankopedia/vehicle/ussr-r109_t54s.png",
+            "tank_id": 18177
+        },
+		"65313": {
+            "nation_i18n": "U.S.A.",
+            "level": 1,
+			"tier": "one",
+            "is_premium": false,
+            "type_i18n": "Light Tank",
+            "short_name_i18n": "M24 Chaffee GT short",
+            "name_i18n": "M24 Chaffee GT",
+			"image": "http://worldoftanks.asia/static/2.14.0/encyclopedia/tankopedia/vehicle/usa-m24_chaffee_gt.png",
+            "tank_id": 65313
+        },
+		"17953": {
+            "nation_i18n": "U.S.A.",
+            "level": 7,
+			"tier": "seven",
+            "is_premium": false,
+            "type_i18n": "Light Tank",
+            "short_name_i18n": "M41 Bulldog short",
+            "name_i18n": "M41 Bulldog",
+			"image": "http://worldoftanks.asia/static/2.14.0/encyclopedia/tankopedia/vehicle/usa-m41_bulldog.png",
+            "tank_id": 17953
+        },
+		"18433": {
+            "nation_i18n": "U.S.S.R.",
+            "level": 7,
+			"tier": "seven",
+            "is_premium": false,
+            "type_i18n": "Light Tank",
+            "short_name_i18n": "R107 LTB",
+            "name_i18n": "R107 LTB",
+			"image": "http://worldoftanks.asia/static/2.14.0/encyclopedia/tankopedia/vehicle/ussr-r107_ltb.png",
+            "tank_id": 18433
         }
     }
 }
