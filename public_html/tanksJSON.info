@@ -1524,9 +1524,9 @@
             "tier": "five",
             "is_premium": false,
             "type_i18n": "Tank Destroyer",
-            "short_name_i18n": "T49",
-            "name_i18n": "T49",
-            "image": "http://worldoftanks.asia/static/2.13.1/encyclopedia/tankopedia/vehicle/usa-t49.png",
+            "short_name_i18n": "T67",
+            "name_i18n": "T67",
+            "image": "http://worldoftanks.asia/static/2.14.0/encyclopedia/tankopedia/vehicle/usa-t67.png",
             "tank_id": "10529"
         },
         "2865": {
