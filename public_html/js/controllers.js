@@ -6,7 +6,9 @@ var tankControllers = angular.module('tankControllers', []);
 
 tankControllers.controller('TankCtrl', [ '$scope', '$http', function($scope, $http){
     $http({method: 'GET', 
-        url: 'tanksJSON.info'
+        //url: 'tanksJSON.info'
+        url: 'https://api.worldoftanks.asia/wot/encyclopedia/tanks/',
+        params: {application_id: '840a965aa2a0d19550d6d2a03d63e955', language: 'en'}
         })
         .success(function(data){
             $scope.tanks = data.data; 

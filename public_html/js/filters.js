@@ -23,6 +23,29 @@ tankFilters.filter('objFilter', function() {
     };
 });
 
+
+tankFilters.filter('numFilter', function() {
+  return function(items, filter) {
+      if (!filter){
+          return items;
+      }
+      
+      var result = [];
+      angular.forEach(filter, function(filterVal, filterKey) {
+          angular.forEach(items, function(item) {
+              if (item.hasOwnProperty(filterKey) && item[filterKey] == filterVal) {
+                  result.push(item);
+              }else if(item.hasOwnProperty(filterKey) && filterVal == ""){
+                  result.push(item);
+              }
+          });
+      });
+
+      return result;
+    };
+});
+
+
 tankFilters.filter('tier', function() {
     return function(input) {
         switch(input){

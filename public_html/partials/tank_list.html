@@ -18,18 +18,18 @@
         
         <h4>Tier:</h4>
         
-        <select ng-model="tier.tier">
+        <select ng-model="tier.level">
             <option value="">All</option>
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-            <option value="five">5</option>
-            <option value="six">6</option>
-            <option value="seven">7</option>
-            <option value="eight">8</option>
-            <option value="nine">9</option>
-            <option value="ten">10</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
         </select>
 
     </div>
@@ -54,7 +54,7 @@
         </script>
         
        <ul class="tanks">
-            <li ng-repeat="tank in tanks | objFilter:search | objFilter:nation | objFilter:type | objFilter:tier" class="tankList" >
+            <li ng-repeat="tank in tanks | objFilter:search | objFilter:nation | objFilter:type | numFilter:tier" class="tankList" >
                 <h3><a href="#/tanks/{{tank.tank_id}}">{{tank.name_i18n}}<span ng-show="{{tank.is_premium}}" class="premium"> - Premium</span></a></h3>
                 <span style="float:left; width:40%"><a href="#/tanks/{{tank.tank_id}}"><img ng-src="{{tank.image}}"  width="100%"/></a></span>
                 <p>Short Name: {{tank.short_name_i18n}}</p>
